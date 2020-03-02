@@ -11,15 +11,10 @@ public class PlayerControls : MonoBehaviour
 
     public GameObject projectile;
     public float speed = 1f;
-    float width = 20.0f;
-    float height =8.5f;
-    float offset = 01f;
-    
+    readonly float width = 20.0f;
+    readonly float height =8.5f;
+    readonly float offset = 01f;
 
-    void Start()
-    {
-        
-    }
 
    void SpawnProjectile()
     {
@@ -52,7 +47,7 @@ public class PlayerControls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             SceneManager.LoadScene("SampleScene");
         }

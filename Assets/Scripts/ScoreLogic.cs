@@ -7,20 +7,15 @@ public class ScoreLogic : MonoBehaviour
 {
     Text txt;
     public int score = 0;
+    public int ePoint =1;
     void Start()
     {
         txt = GetComponent<Text>();    
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddToScoreVoid ()
     {
-        
-    }
-
-    public void addToScoreVoid ()
-    {
-        score = score + 1;
+        score += ePoint;
         PrintScore();
     }
 

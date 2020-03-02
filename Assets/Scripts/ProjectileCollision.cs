@@ -6,35 +6,24 @@ public class ProjectileCollision : MonoBehaviour
 {
     public GameObject particles;
     ScoreLogic addToScore;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-    void callScoreLogicScript()
+    void CallScoreLogicScript()
     {
         addToScore = GameObject.FindGameObjectWithTag("GUI").GetComponent<ScoreLogic>();
-        addToScore.addToScoreVoid();
+        addToScore.AddToScoreVoid();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) {
 
-        spawnParticles(collision.transform.position);
-        callScoreLogicScript();
+        SpawnParticles(collision.transform.position);
+        CallScoreLogicScript();
         Destroy(collision.gameObject);
         
             }
     }
 
-    void spawnParticles(Vector2 tempPosition)
+    void SpawnParticles(Vector2 tempPosition)
     {
         Instantiate(particles, tempPosition, Quaternion.identity);
     }
