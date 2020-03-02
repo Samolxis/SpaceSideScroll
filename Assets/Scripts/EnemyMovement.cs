@@ -6,18 +6,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float enemySpeed = 1f;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        moveToTheLeft();
+        MoveToTheLeft();
     }
 
-    private void moveToTheLeft()
+    private void MoveToTheLeft()
     {
         transform.Translate(-enemySpeed, 0, 0);
     }

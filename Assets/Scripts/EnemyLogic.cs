@@ -12,13 +12,7 @@ public class EnemyLogic : MonoBehaviour
     {
         StartCoroutine(EnemyTimer());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     IEnumerator EnemyTimer()
     {
         while (isSpawning == true)
